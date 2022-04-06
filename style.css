@@ -1,0 +1,126 @@
+:root{
+    --left-bg-color:#28282899;;
+    --right-bg-color:#28282899;
+    --left-btn-hover-color:#2c489699;;
+    --right-btn-hover-color:#20da9c3b;
+    --hover-width: 75%;
+    --other-width: 25%;
+    --speed:1000ms;
+
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    
+
+}.split.left .btn:hover{
+    background-color: var(--left-btn-hover-color);
+    border-color: var(--left-btn-hover-color);
+}
+.split.right .btn:hover{
+    background-color: var(--right-btn-hover-color);
+    border-color: var(--right-btn-hover-color);
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+}
+.split{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+
+}
+.split.left::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--left-bg-color) ;
+}
+.split.left{
+    left: 0;
+    background: url(./adidaspreto1200.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    
+}
+.split.right::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--right-bg-color) ;
+}
+.split.right{
+    right: 0;
+    background: url(./imagem\ melhor\ puma1200.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.btn{
+    font-size: 1.7rem;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translatex(-50%);
+    width: 12rem;
+    padding: 1rem;
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hover-left .left{
+    width: var(--hover-width);
+}
+.hover-left .right{
+    width: var(--other-width);
+}
+.hover-right .left{
+    width: var(--other-width);
+}
+.hover-right .right{
+    width: var(--hover-width);
+}
+.split.right, .split.left, .split.right::before ,.split.left::before{
+
+    transition: all var(--speed) ease-in-out;
+
+}
+footer{
+    position: absolute;
+    font-family: sans-serif;
+    font-size: 2dem;
+    bottom: 0;
+    width: 100%;
+    height: 15px;
+    color: #fff;
+}
+@media only screen and (max-width: 450px){
+    .split{
+        width: 100%;
+        height: 50vh;
+    }
+    .split.right{
+        margin-top: 50vh;
+    }
+
+}
